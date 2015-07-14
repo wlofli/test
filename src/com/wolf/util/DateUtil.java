@@ -2,6 +2,7 @@ package com.wolf.util;
 
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.Date;
 
 public class DateUtil {
 	/*
@@ -22,6 +23,21 @@ public class DateUtil {
 //		System.out.println(calendar.getTimeInMillis());
 //		System.out.println(new Timestamp(calendar.getTimeInMillis()));
 		return calendar.getTimeInMillis();
+	}
+	
+	
+	/**
+	 * add by lzc
+	 * date: 2015年7月14日
+	 * @param date
+	 * @return 24小时后的时间
+	 */
+	public static Date getNextDay(Date date){
+		Calendar  calendar =Calendar.getInstance();
+		calendar.setTime(date);
+		calendar.add(calendar.DAY_OF_YEAR, 1);
+		return calendar.getTime();
+		
 	}
 
 }
