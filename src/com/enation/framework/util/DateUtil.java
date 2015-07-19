@@ -175,6 +175,8 @@ public class DateUtil {
 	}
 	
 	public static void main(String[] args){
+		
+		System.out.println(DateUtil.getCurrentMonth().toString());
 //		System.out.println(DateUtil.getDateline("2038-01-20"));
 		System.out.println(DateUtil.getDatelineLong("2011-12-31"));
 	}
