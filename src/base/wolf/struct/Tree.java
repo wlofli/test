@@ -1,9 +1,6 @@
 package base.wolf.struct;
 /**
  * author lzc
- * 2015骞�7鏈�2鏃ヤ笂鍗�9:10:20
- * undone
- * 中文字问题未发现
  */
 /**
  * 
