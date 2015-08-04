@@ -12,11 +12,13 @@ public class Test {
 
 	
 	public static void main(String[] args) {
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-		System.currentTimeMillis();
-		Long time = Long.parseLong("1410243205000");
-		Date date = new Date(time);
-		System.out.println(simpleDateFormat.format(date));
+//		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:SSSZ");
+//		System.currentTimeMillis();
+//		Long time = Long.parseLong("1410243205000");
+//		Date date = new Date(System.currentTimeMillis());
+//		System.out.println(simpleDateFormat.format(date));
+		System.out.println(String.format("%,d",9999999));
+		
 	}
 	
 	
