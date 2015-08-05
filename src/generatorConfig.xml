@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-	<properties resource="com/yuan/mybatis/mbg/util/generatorConfig.properties" />
+	<properties resource="resource/properties/generatorConfig.properties" />
 	<classPathEntry location="${classPath}" />
 	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
 		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />

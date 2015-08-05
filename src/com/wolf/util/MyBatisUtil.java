@@ -21,6 +21,7 @@ public class MyBatisUtil {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		String genCfg = "/generatorConfig.xml"; //src的一级目录下
+System.out.println(MyBatisUtil.class.getResource("generatorConfig.xml"));
 		File configFile = new File(MyBatisUtil.class.getResource(genCfg).getFile());
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = null;
