@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="properties/generatorConfig.properties"/>
+	<classPathEntry location="${classPath}" />
+	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+			<property name="fileName" value="GeneratedMapperConfig.xml" />
+			<property name="targetPackage" value="com.yuan.mybatis.mbg.util" />
+			<property name="targetProject" value="${targetProject}" />
+		</plugin>
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection driverClass="${driverClass}"
+			connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="${modelPackage}"
+			targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="${sqlMapperPackage}"
+			targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="${daoMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table schema="minghan" tableName="sys_group" domainObjectName="Group">
+			<generatedKey column="groupId" sqlStatement="mysql"
+				identity="true" />
+		</table>
+		<table schema="minghan" tableName="sys_admin" domainObjectName="Admin"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+
+	</context>
+</generatorConfiguration>

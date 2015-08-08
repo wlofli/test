@@ -20,13 +20,16 @@ public class MyBatisUtil {
 	public static void main(String[] args) {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
-		String genCfg = "/generatorConfig.xml"; //src的一级目录下
-System.out.println(MyBatisUtil.class.getResource("generatorConfig.xml"));
-		File configFile = new File(MyBatisUtil.class.getResource(genCfg).getFile());
+		String genCfg = "E:/git/test/resource/properties/generatorConfig.xml"; //src的一级目录下
+//System.out.println("E:/git/test/resource/properties/generatorConfig.xml");
+//		File configFile = new File(MyBatisUtil.class.getResource(genCfg).getFile());
+		File configFile = new File(genCfg);
+System.out.println(0);
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = null;
 		try {
 			config = cp.parseConfiguration(configFile);
+System.out.println(1);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (XMLParserException e) {
@@ -35,11 +38,13 @@ System.out.println(MyBatisUtil.class.getResource("generatorConfig.xml"));
 		DefaultShellCallback callback = new DefaultShellCallback(overwrite);
 		MyBatisGenerator myBatisGenerator = null;
 		try {
+System.out.println(2);
 			myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
 		} catch (InvalidConfigurationException e) {
 			e.printStackTrace();
 		}
 		try {
+System.out.println(3);
 			myBatisGenerator.generate(null);
 		} catch (SQLException e) {
 			e.printStackTrace();

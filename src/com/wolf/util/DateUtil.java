@@ -14,7 +14,6 @@ public class DateUtil {
 	 * 
 	 */
 	public static Long getMinMonthTime(int x){
-		x = -x;
 		Calendar calendar = Calendar.getInstance();
 //		System.out.println(calendar.get(Calendar.YEAR));
 //		System.out.println(calendar.get(Calendar.MARCH));
@@ -22,7 +21,7 @@ public class DateUtil {
 //		System.out.println(calendar.get(Calendar.DATE));
 //		System.out.println(calendar.get(Calendar.MINUTE));
 		
-		calendar.set(Calendar.MONTH,calendar.get(Calendar.MONTH)  + x);
+		calendar.set(Calendar.MONTH,calendar.get(Calendar.MONTH) - x);
 		calendar.set(Calendar.DAY_OF_MONTH, 1);
 		calendar.set(Calendar.HOUR_OF_DAY, 0);
 		calendar.set(Calendar.MINUTE, 0);
@@ -41,7 +40,7 @@ public class DateUtil {
 	public static Date getNextDay(Date date){
 		Calendar  calendar =Calendar.getInstance();
 		calendar.setTime(date);
-		calendar.add(calendar.DAY_OF_YEAR, 1);
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
 		return calendar.getTime();
 		
 	}
