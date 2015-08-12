@@ -19,6 +19,8 @@ public class Test {
 //		System.out.println(simpleDateFormat.format(date));
 		System.out.println(String.format("%,d",9999999));
 		
+		System.out.println("test");
+		
 	}
 	
 	
