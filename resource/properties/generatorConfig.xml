@@ -37,11 +37,11 @@
 			targetPackage="${daoMapperPackage}" targetProject="${targetProject}">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-		<table schema="minghan" tableName="sys_group" domainObjectName="Group">
-			<generatedKey column="groupId" sqlStatement="mysql"
-				identity="true" />
-		</table>
-		<table schema="minghan" tableName="sys_admin" domainObjectName="Admin"
+<!-- 		<table schema="minghan" tableName="sys_group" domainObjectName="Group"> -->
+<!-- 			<generatedKey column="groupId" sqlStatement="mysql" -->
+<!-- 				identity="true" /> -->
+<!-- 		</table> -->
+		<table schema="user" tableName="user" domainObjectName="User"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">

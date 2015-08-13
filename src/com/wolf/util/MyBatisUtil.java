@@ -24,31 +24,27 @@ public class MyBatisUtil {
 //System.out.println("E:/git/test/resource/properties/generatorConfig.xml");
 //		File configFile = new File(MyBatisUtil.class.getResource(genCfg).getFile());
 		File configFile = new File(genCfg);
-System.out.println(0);
+System.out.println("configFile = " + configFile);
 		ConfigurationParser cp = new ConfigurationParser(warnings);
+System.out.println("cp = " + cp);
 		Configuration config = null;
 		try {
 			config = cp.parseConfiguration(configFile);
-System.out.println(1);
+System.out.println("config = " + config);
+			DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+			
+			MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+System.out.println("myBatisGenerator = " + myBatisGenerator);
+			//执行语句
+			myBatisGenerator.generate(null);
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (XMLParserException e) {
 			e.printStackTrace();
-		}
-		DefaultShellCallback callback = new DefaultShellCallback(overwrite);
-		MyBatisGenerator myBatisGenerator = null;
-		try {
-System.out.println(2);
-			myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+	
 		} catch (InvalidConfigurationException e) {
 			e.printStackTrace();
-		}
-		try {
-System.out.println(3);
-			myBatisGenerator.generate(null);
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
