@@ -41,7 +41,7 @@
 <!-- 			<generatedKey column="groupId" sqlStatement="mysql" -->
 <!-- 				identity="true" /> -->
 <!-- 		</table> -->
-		<table schema="user" tableName="user" domainObjectName="User"
+		<table schema="my" tableName="mybaits" domainObjectName="Test"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">
