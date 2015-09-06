@@ -33,5 +33,17 @@ public class MD5Util {
 	        System.out.println(MD5Util.MD5("1"));
 	        System.out.println(MD5Util.MD5("20121221"));
 	    }
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    /* 				rsc  		 					md5
+	     * 				1								c4ca4238a0b923820dcc509a6f75849b
+	     */
 
 }

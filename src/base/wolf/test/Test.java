@@ -1,5 +1,7 @@
 package base.wolf.test;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -20,10 +22,21 @@ public class Test {
 //		System.out.println(simpleDateFormat.format(date));
 //		System.out.println(String.format("%,d",9999999));
 //		System.out.println("test");
+		System.out.println(System.currentTimeMillis());
 		
-		HashMap<String, String>map = new HashMap<String, String>();
-		map.put("id", "id");
-		System.out.println(map.get("name"));
+		
+		
+//		HashMap<String, String>map = new HashMap<String, String>();
+//		map.put("id", "id");
+//		System.out.println(map.get("name"));
+//		String string = "%3CCOUNTRY%3E/%3CLANG%3E";
+		
+		
+		
+		
+//		 NumberFormat nf = new DecimalFormat("######0.00");
+//		Double a = (double) 6;
+//		System.out.println(nf.format(Double.parseDouble("6")));
 		
 	}
 	
