@@ -2,7 +2,7 @@
 <!DOCTYPE generatorConfiguration
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
-
+<!-- mokeuse -->
 <generatorConfiguration>
 	<properties resource="properties/generatorConfig.properties"/>
 	<classPathEntry location="${classPath}" />
@@ -42,7 +42,7 @@
 <!-- 			<generatedKey column="groupId" sqlStatement="mysql" -->
 <!-- 				identity="true" /> -->
 <!-- 		</table> -->
-		<table schema="my" tableName="mybaits" domainObjectName="Test"
+		<table schema="moke" tableName="m_consumption_info" domainObjectName="Consumption"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">

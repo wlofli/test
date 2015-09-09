@@ -1,8 +1,10 @@
-public class Tank implements Moveable{  
+public class Tank implements Moveable{
+
+	public void move() {
+		// TODO Auto-generated method stub
+	            System.out.println("TanK moving........");  
+	}  
   
-        @Override  
-        public void move() {  
-            System.out.println("TanK moving........");  
-        }  
+       
       
 }  
