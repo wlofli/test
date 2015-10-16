@@ -49,15 +49,23 @@ public class StringUtil {
 	    }
 	    return sb.toString();
 	  }
+	
+	/**将字符串里的大写字母替换为_小写字母   
+	 * <result column="papersNumber" property="papersNumber" />
+	 * -> <result column="papers_number" property="papersNumber" />
+	 * add by lzc     date: 2015年10月8日
+	 * @param s
+	 * @return
+	 */
+	public static String mybaitsUpperCaseTo_LowerCase(String s){
+		s.replaceAll("^[A-Z]", "\1[A-Z]");
+		return s;
+	}
 
 	
 	
 	public static void main(String[] args) {
-//		String string = "\u60A8\u7684\u9A8C\u8BC1\u7801\u662F\uFF1A\u3010% \u65B0\u8D8A\u7F51\u3011\u3002\u5982\u9700\u5E2E\u52A9\u8BF7\u8054\u7CFB\u5BA2\u670D\u3002";
-//		System.out.println(StringUtil.unicode2String(string));
-		String string = "您的验证码是：【% 新越网】。如需帮助请联系客服。";
-		
-		System.out.println(string);
+		String string = "BBBBpapersNumberAAAA";
 		
 	}
 }

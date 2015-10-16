@@ -10,8 +10,6 @@ public class DateUtil {
 	 * param:x //上X个月 0为当月
 	 * 返回时间戳
 	 * 2015年7月19日23:02:26
-	 * 下月以后再次测试->undone 未测试
-	 * 
 	 */
 	public static Long getMinMonthTime(int x){
 		Calendar calendar = Calendar.getInstance();
@@ -50,8 +48,8 @@ public class DateUtil {
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
 		System.out.println(sf.format(new Date()));
-		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
-//		System.out.println(sf.format(DateUtil.getMinMonthTime(0)));
+//		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
+		System.out.println(sf.format(DateUtil.getMinMonthTime(0)));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(1)));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(2)));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(3)));

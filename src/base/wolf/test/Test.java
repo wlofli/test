@@ -3,6 +3,7 @@ package base.wolf.test;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 
@@ -15,6 +16,7 @@ public class Test {
 
 	
 	public static void main(String[] args) {
+
 //		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:SSSZ");
 //		System.currentTimeMillis();
 //		Long time = Long.parseLong("1410243205000");
@@ -22,7 +24,7 @@ public class Test {
 //		System.out.println(simpleDateFormat.format(date));
 //		System.out.println(String.format("%,d",9999999));
 //		System.out.println("test");
-		System.out.println(System.currentTimeMillis());
+//		System.out.println(System.currentTimeMillis());
 		
 		
 		
@@ -31,12 +33,16 @@ public class Test {
 //		System.out.println(map.get("name"));
 //		String string = "%3CCOUNTRY%3E/%3CLANG%3E";
 		
-		
+//		LocalDateTime localDateTime = LocalDateTime.now();
+//		System.out.println(localDateTime);
 		
 		
 //		 NumberFormat nf = new DecimalFormat("######0.00");
-//		Double a = (double) 6;
 //		System.out.println(nf.format(Double.parseDouble("6")));
+		
+		
+		String string = "2h2h2";
+		System.out.println(string.split("h").length);
 		
 	}
 	

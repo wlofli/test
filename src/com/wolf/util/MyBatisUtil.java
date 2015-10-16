@@ -37,6 +37,7 @@ System.out.println("config = " + config);
 System.out.println("myBatisGenerator = " + myBatisGenerator);
 			//执行语句
 			myBatisGenerator.generate(null);
+System.out.println("ok");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (XMLParserException e) {
