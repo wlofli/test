@@ -49,7 +49,7 @@ public class DateUtil {
 		
 		System.out.println(sf.format(new Date()));
 //		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
-		System.out.println(sf.format(DateUtil.getMinMonthTime(0)));
+		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(1)));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(2)));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(3)));

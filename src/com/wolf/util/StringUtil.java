@@ -1,5 +1,6 @@
 package com.wolf.util;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
@@ -60,6 +61,26 @@ public class StringUtil {
 	public static String mybaitsUpperCaseTo_LowerCase(String s){
 		s.replaceAll("^[A-Z]", "\1[A-Z]");
 		return s;
+	}
+	
+	/**changgeCode
+	 * add by lzc     date: 2015年10月26日
+	 * @param s
+	 * @param typeCode  (ex.GBK)
+	 * @param targetCode (ex.UTF-8)
+	 * @return
+	 * @throws IOException
+	 */
+	public static String ChangeCode(String s, String typeCode, String targetCode) throws IOException{
+		String result = null;
+		try {
+			result =  new String(s.getBytes(typeCode), targetCode);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			throw new IOException();
+		}
+		return result;
 	}
 
 	

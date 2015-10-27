@@ -1,5 +1,6 @@
 package base.wolf.test;
 
+import java.io.UnsupportedEncodingException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -39,10 +40,24 @@ public class Test {
 		
 //		 NumberFormat nf = new DecimalFormat("######0.00");
 //		System.out.println(nf.format(Double.parseDouble("6")));
+//		int tint = 257;
+//		char ch = '=';
+//		boolean s = true;
+//		byte a = 3;
+//		byte b = (byte) tint;
+//		System.out.println();
 		
 		
-		String string = "2h2h2";
-		System.out.println(string.split("h").length);
+		
+		String s = "//杩欎釜绫伙紝涓轰簡鎬ц兘浼樺寲鍋氫簡寰堝鐗瑰埆澶勭悊锛屼竴鍒囬兘鏄负浜嗘�ц兘锛侊紒锛�";
+		String t;
+		try {
+			t = new String(s.getBytes("GBK"),"UTF-8");
+			System.out.println(t);
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 	}
 	
