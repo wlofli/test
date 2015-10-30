@@ -82,6 +82,20 @@ public class StringUtil {
 		}
 		return result;
 	}
+	
+	
+	/**字母是否大写
+	 * add by lzc     date: 2015年10月30日
+	 * @param c
+	 * @return
+	 */
+	public static boolean isUpperCase(char c) {
+		// TODO Auto-generated method stub
+		if (Character.isUpperCase(c)) {
+			return true;
+		}
+		return false;
+	}
 
 	
 	

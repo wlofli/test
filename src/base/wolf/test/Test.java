@@ -1,14 +1,15 @@
 package base.wolf.test;
 
-import java.io.UnsupportedEncodingException;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
+import java.util.Map;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
+import javax.xml.ws.http.HTTPException;
+
+import wolf.tools.WebApplication.HttpURLConnection;
+import wolf.tools.WebApplication.UrlConnectionUtil;
+
 
 /**
  * author lzc2015年7月23日上午11:27:52
@@ -16,7 +17,7 @@ import com.sun.org.apache.bcel.internal.generic.NEW;
 public class Test {
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException,HTTPException {
 
 //		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:SSSZ");
 //		System.currentTimeMillis();
@@ -28,38 +29,43 @@ public class Test {
 //		System.out.println(System.currentTimeMillis());
 		
 		
-		
 //		HashMap<String, String>map = new HashMap<String, String>();
 //		map.put("id", "id");
 //		System.out.println(map.get("name"));
 //		String string = "%3CCOUNTRY%3E/%3CLANG%3E";
 		
-//		LocalDateTime localDateTime = LocalDateTime.now();
-//		System.out.println(localDateTime);
 		
-		
+		//number
 //		 NumberFormat nf = new DecimalFormat("######0.00");
 //		System.out.println(nf.format(Double.parseDouble("6")));
-//		int tint = 257;
-//		char ch = '=';
-//		boolean s = true;
-//		byte a = 3;
-//		byte b = (byte) tint;
 //		System.out.println();
 		
 		
+//		//out of memory
+//		List<double[]> parent = new ArrayList<double[]>();
+//		for (int i = 0; i < 100000; i++) {
+////			for (int j = 0; j < 10000; j++) {
+//				double[] child = new double[10000];
+//				parent.add(child);
+//				child = null;
+//				System.out.println(parent.size());
+////			}
+//		}
 		
-		String s = "//杩欎釜绫伙紝涓轰簡鎬ц兘浼樺寲鍋氫簡寰堝鐗瑰埆澶勭悊锛屼竴鍒囬兘鏄负浜嗘�ц兘锛侊紒锛�";
-		String t;
-		try {
-			t = new String(s.getBytes("GBK"),"UTF-8");
-			System.out.println(t);
-		} catch (UnsupportedEncodingException e1) {
+		
+		String uri = "http://192.168.8.23:8080/xinyue-server-webapp";
+		Map<String,Object> map = new HashMap<String,Object>();
+		 map.put("username","张三");
+         map.put("password","88888");
+         try {
+			UrlConnectionUtil.doGet(uri, map);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e.printStackTrace();
 		}
-		
 	}
+
+
 	
 	
 	
