@@ -1,13 +1,11 @@
 package base.wolf.test;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.ws.http.HTTPException;
 
-import wolf.tools.WebApplication.HttpURLConnection;
 import wolf.tools.WebApplication.UrlConnectionUtil;
 
 
