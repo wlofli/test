@@ -1,11 +1,18 @@
 package base.wolf.test;
 
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.xml.ws.http.HTTPException;
 
+import org.apache.tomcat.jni.User;
+
+import com.wolf.util.MD5Util;
+
+import base.wolf.model.BaseModel;
 import wolf.tools.WebApplication.UrlConnectionUtil;
 
 
@@ -50,17 +57,20 @@ public class Test {
 ////			}
 //		}
 		
+		//uri simulator
+//		String uri = "http://192.168.8.23:8080/xinyue-server-webapp";
+//		Map<String,Object> map = new HashMap<String,Object>();
+//		 map.put("username","张三");
+//         map.put("password","88888");
+//         try {
+//			UrlConnectionUtil.doGet(uri, map);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
-		String uri = "http://192.168.8.23:8080/xinyue-server-webapp";
-		Map<String,Object> map = new HashMap<String,Object>();
-		 map.put("username","张三");
-         map.put("password","88888");
-         try {
-			UrlConnectionUtil.doGet(uri, map);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		
 	}
 
 

@@ -70,6 +70,12 @@ public class StringUtil {
 	 * @param targetCode (ex.UTF-8)
 	 * @return
 	 * @throws IOException
+	 * 常用编码格式 
+	 * ISO-8859-1
+	 * GBK
+	 * GB2312
+	 * UTF-8
+	 * BIG5//台湾繁体字编码
 	 */
 	public static String ChangeCode(String s, String typeCode, String targetCode) throws IOException{
 		String result = null;
@@ -100,7 +106,15 @@ public class StringUtil {
 	
 	
 	public static void main(String[] args) {
-		String string = "BBBBpapersNumberAAAA";
+		String string = "u60A8u7684u9A8Cu8BC1u7801u662FuFF1Au3010u65B0u8D8Au7F51u3011u3002u5982u9700u5E2Eu52A9u8BF7u8054u7CFBu5BA2u670Du3002";
+		try {
+			String string2 = StringUtil.unicode2String(string);
+//			String string2 = StringUtil.ChangeCode(string, "unicode", "UTF-8");
+			System.out.println(string2);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 }

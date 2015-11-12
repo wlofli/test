@@ -30,8 +30,8 @@ public class MD5Util {
 	        }
 	    }
 	    public static void main(String[] args) {
-	        System.out.println(MD5Util.MD5("1"));
-	        System.out.println(MD5Util.MD5("20121221"));
+	        System.out.println(MD5Util.MD5("C81E728D9D4C2F636F067F89CC14862C"));
+//	        System.out.println(MD5Util.MD5("20121221"));
 	    }
 	    
 	    
@@ -44,6 +44,10 @@ public class MD5Util {
 	    
 	    /* 				rsc  		 					md5
 	     * 				1								c4ca4238a0b923820dcc509a6f75849b
-	     */
+	     *                                              d41d8cd98f00b204e9800998ecf8427e
+		 *
+		 *
+		 *
+		 */
 
 }
