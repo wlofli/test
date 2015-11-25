@@ -102,6 +102,10 @@ public class StringUtil {
 		}
 		return false;
 	}
+	
+	public static boolean isEmpty(Object str) {
+		return (str == null || "".equals(str));
+	}
 
 	
 	

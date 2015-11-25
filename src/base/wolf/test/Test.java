@@ -11,6 +11,7 @@ import javax.xml.ws.http.HTTPException;
 import org.apache.tomcat.jni.User;
 
 import com.wolf.util.MD5Util;
+import com.wolf.util.StringUtil;
 
 import base.wolf.model.BaseModel;
 import wolf.tools.WebApplication.UrlConnectionUtil;
@@ -70,6 +71,16 @@ public class Test {
 //		}
 		
 		
+		String tString = " ";
+		String kString = tString.trim();
+		System.out.println(StringUtil.isEmpty(kString));
+		System.out.println(kString);
+		
+		
+		
+		http://www.91loan.cn/moke/site/send/code?check=false
+		data,	phone 
+		type:json
 		
 	}
 
