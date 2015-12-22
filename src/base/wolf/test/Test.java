@@ -3,12 +3,20 @@ package base.wolf.test;
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+import java.util.UUID;
 
 import javax.xml.ws.http.HTTPException;
 
+import org.apache.commons.lang.math.RandomUtils;
+import org.apache.ibatis.jdbc.SqlRunner;
 import org.apache.tomcat.jni.User;
+import org.mybatis.generator.config.JDBCConnectionConfiguration;
+import org.mybatis.generator.internal.db.ConnectionFactory;
 
 import com.wolf.util.MD5Util;
 import com.wolf.util.StringUtil;
@@ -71,16 +79,61 @@ public class Test {
 //		}
 		
 		
-		String tString = " ";
-		String kString = tString.trim();
-		System.out.println(StringUtil.isEmpty(kString));
-		System.out.println(kString);
+//		String tString = "&18768104912&123456";
+//		System.out.println(tString.split("&").length);
+//		http://www.91loan.cn/moke/site/send/code?check=false
+//		data,	phone 
+//		type:json
 		
 		
 		
-		http://www.91loan.cn/moke/site/send/code?check=false
-		data,	phone 
-		type:json
+		//产生随机八位数
+//		Random random = new Random();
+//		for (int i = 0; i < 100; i++) {
+//			int k =  random.nextInt(100000000);
+//			System.out.println(String.format("%08d", k));
+//		}
+		
+		
+		
+		//
+		byte k = 8;
+		System.out.println(k << 27);
+		
+		
+		
+//		JDBCConnectionConfiguration config = new JDBCConnectionConfiguration();
+//		try {
+//			ConnectionFactory.getInstance().getConnection(config );
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		Connection connection = null;
+//		SqlRunner runner = new SqlRunner(connection);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 

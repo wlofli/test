@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -124,4 +125,23 @@ public class UrlConnectionUtil {
 	             System.out.println(conn.getResponseCode());
 	         }
 	     }
+	     
+	     
+	     
+	     public static void main(String[] args) throws Throwable {
+//	    	 String url = "https://passport.58.com/mobileauthcodelogin/getcode";
+//	    	 ?mobile=18768104912&validatecode=xkbh3&source=pc-login&callback=jsonp1449815255700&_=1449815408053"
+	    	 
+	    	 String url = "http://www.91loan.cn/moke/site/send/code";
+	    	 UrlConnectionUtil coon = new UrlConnectionUtil();
+	    	 Map<String, Object> map = new HashMap<String, Object>();
+	    	 map.put("phone", "18768104912");
+	    	 map.put("check", "false");
+//	    	 map.put("validatecode", "xxxdy");
+//	    	 map.put("source", "pc-login");
+//	    	 map.put("callback", "jsonp1449815255704");
+//	    	 map.put("_", "1449815865944");
+	    	 coon.doPost(url, map);
+			
+		}
 }
