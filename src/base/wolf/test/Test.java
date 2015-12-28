@@ -5,6 +5,7 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -26,7 +27,7 @@ import wolf.tools.WebApplication.UrlConnectionUtil;
 
 
 /**
- * author lzc2015年7月23日上午11:27:52
+ * author lzc2015年7月23日11:27:52
  */
 public class Test {
 
@@ -87,7 +88,7 @@ public class Test {
 		
 		
 		
-		//产生随机八位数
+		//随机产生八位数
 //		Random random = new Random();
 //		for (int i = 0; i < 100; i++) {
 //			int k =  random.nextInt(100000000);
@@ -96,9 +97,6 @@ public class Test {
 		
 		
 		
-		//
-		byte k = 8;
-		System.out.println(k << 27);
 		
 		
 		
@@ -112,9 +110,10 @@ public class Test {
 //		Connection connection = null;
 //		SqlRunner runner = new SqlRunner(connection);
 		
+		DecimalFormat df = new DecimalFormat("######0.00");
 		
-		
-		
+		double a = Double.parseDouble(df.format(6.021565456));
+		System.out.println(a);
 		
 		
 		
