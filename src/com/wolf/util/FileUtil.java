@@ -1,4 +1,4 @@
-package com.enation.framework.util;
+package com.wolf.util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,10 +9,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+import javax.annotation.Resource;
+
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.taskdefs.Delete;
 import org.apache.tools.ant.taskdefs.Expand;
+
+import com.enation.framework.util.StringUtil;
 
 /**
  * 文件工具类
@@ -20,6 +25,8 @@ import org.apache.tools.ant.taskdefs.Expand;
  * @author kingapex 2010-1-6下午02:14:41
  */
 public class FileUtil {
+	@Resource
+	static Logger log = Logger.getLogger(FileUtil.class);
 
 	private FileUtil() {
 	}
@@ -99,7 +106,7 @@ public class FileUtil {
 	 * @param filePath
 	 * @return
 	 */
-	public static String read(String filePath, String code) {
+	public static String read(String filePath,String code) {
 		if (code == null || code.equals("")) {
 			code = "UTF-8";
 		}
@@ -114,15 +121,43 @@ public class FileUtil {
 				fileContent = fileContent + line + "\n";
 			}
 			read.close();
-			read = null;
 			reader.close();
-			read = null;
 		} catch (Exception ex) {
 			ex.printStackTrace();
-			fileContent = "";
+			fileContent = null;
 		}
 		return fileContent;
 	}
+	
+	
+	/**
+	 * 读取文件内容 默认是UTF-8编码
+	 * 
+	 * @param filePath
+	 * @return
+	 */
+	public static String read(String filePath) {
+		String code = "UTF-8";
+		String fileContent = "";
+		File file = new File(filePath);
+		try {
+			InputStreamReader read = new InputStreamReader(new FileInputStream(
+					file), code);
+			BufferedReader reader = new BufferedReader(read);
+			String line;
+			while ((line = reader.readLine()) != null) {
+				fileContent = fileContent + line + "\n";
+			}
+			read.close();
+			reader.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			fileContent = null;
+		}
+		return fileContent;
+	}
+	
+
 
 	/**
 	 * 删除文件或文件夹
@@ -251,7 +286,9 @@ public class FileUtil {
 			reader.close();
 			read = null;
 		} catch (Exception ex) {
-			fileContent = "";
+			fileContent = null;
+			ex.printStackTrace();
+//			log.error("FileUtil:read warong", ex);
 		}
 		return fileContent;
 	}
@@ -321,6 +358,20 @@ public class FileUtil {
 			delete.execute();
 		}
 	}
+	
+	/**get project file path
+	 * add by lzc     date: 2015年12月30日
+	 * @return
+	 */
+	public static String getFileURI(){
+		String re = FileUtil.class.getResource("/").toString();
+		if (re.startsWith("file")) {
+			re = re.substring(5);
+		}
+		return re ;
+	}
+	
+	
 
 	public static void main(String arg[]) {
 		System.out.println(StringUtil.getRootPath());

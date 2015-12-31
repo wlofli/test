@@ -1,16 +1,20 @@
 package base.wolf.test;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
+import javax.mail.internet.InternetAddress;
 import javax.xml.ws.http.HTTPException;
 
 import org.apache.commons.lang.math.RandomUtils;
@@ -33,6 +37,8 @@ public class Test {
 
 	
 	public static void main(String[] args) throws IOException,HTTPException {
+		InetAddress address = InetAddress.getLocalHost();
+		System.out.println(InetAddress.getLocalHost());
 
 //		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:SSSZ");
 //		System.currentTimeMillis();
@@ -110,10 +116,10 @@ public class Test {
 //		Connection connection = null;
 //		SqlRunner runner = new SqlRunner(connection);
 		
-		DecimalFormat df = new DecimalFormat("######0.00");
-		
-		double a = Double.parseDouble(df.format(6.021565456));
-		System.out.println(a);
+//		DecimalFormat df = new DecimalFormat("######0.00");
+//		
+//		double a = Double.parseDouble(df.format(6.021565456));
+//		System.out.println(a);
 		
 		
 		

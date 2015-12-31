@@ -28,7 +28,7 @@ import com.xinyue.manage.service.OrderService;
 import com.xinyue.manage.util.SericalNumber;
 
 /**
- * author lzc
+ * author lzc springmvc junittestcase
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"file:src/main/resources/conf/spring-mvc.xml"

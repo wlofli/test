@@ -1,22 +1,14 @@
 package com.wolf.util;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.zip.DeflaterOutputStream;
-import java.util.zip.InflaterOutputStream;
-import org.apache.commons.codec.binary.Base64;
-import com.opensymphony.module.random.Test;
-import com.sun.xml.internal.ws.util.ByteArrayBuffer;
 
-import sun.misc.BASE64Decoder;
+import org.apache.commons.codec.binary.Base64;
 
 public class Base64Util {
 	 /** 
