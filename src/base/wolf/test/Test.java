@@ -20,13 +20,18 @@ import javax.xml.ws.http.HTTPException;
 import org.apache.commons.lang.math.RandomUtils;
 import org.apache.ibatis.jdbc.SqlRunner;
 import org.apache.tomcat.jni.User;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.mybatis.generator.config.JDBCConnectionConfiguration;
 import org.mybatis.generator.internal.db.ConnectionFactory;
 
+import com.wolf.util.FileUtil;
 import com.wolf.util.MD5Util;
 import com.wolf.util.StringUtil;
 
 import base.wolf.model.BaseModel;
+import base.wolf.struct.Tree;
 import wolf.tools.WebApplication.UrlConnectionUtil;
 
 
@@ -36,9 +41,9 @@ import wolf.tools.WebApplication.UrlConnectionUtil;
 public class Test {
 
 	
-	public static void main(String[] args) throws IOException,HTTPException {
-		InetAddress address = InetAddress.getLocalHost();
-		System.out.println(InetAddress.getLocalHost());
+	public static void main(String[] args) throws Exception {
+//		InetAddress address = InetAddress.getLocalHost();
+//		System.out.println(InetAddress.getLocalHost());
 
 //		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:SSSZ");
 //		System.currentTimeMillis();
@@ -122,19 +127,15 @@ public class Test {
 //		System.out.println(a);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		int b = 0;
+		int a = 1;
+		try {
+		 int c = a/b;
+		 System.out.println("c==" + c);
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw e;
+		}
 		
 		
 		
@@ -144,7 +145,7 @@ public class Test {
 
 
 	
-	
+		
 	
 	
 	

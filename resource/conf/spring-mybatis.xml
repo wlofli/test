@@ -112,7 +112,6 @@
 	</aop:config>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-<!-- 		<property name="configLocation" value="classpath:/sqlMapConfig.xml" /> -->
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:/mapper/*.xml</value>
@@ -125,7 +124,6 @@
 	<!-- 有了这个后就不用每个Mapper都去定义一下了，会全部自动定义好 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.xinyue.*.dao" />
-<!-- 		<property name="sqlSessionFactory" ref="sqlSessionFactory" /> -->
 	</bean>
 
 </beans>

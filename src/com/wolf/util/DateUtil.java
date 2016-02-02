@@ -1,5 +1,6 @@
 package com.wolf.util;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -26,6 +27,56 @@ public class DateUtil {
 		calendar.set(Calendar.SECOND, 0);
 		calendar.set(Calendar.MILLISECOND, 0);
 		return calendar.getTimeInMillis();
+	}
+	
+	/**获取当前时间前三个月的月初日子
+	 * add by lzc     date: 2016年1月26日
+	 * ex:
+	 * now:2016年1月26日11:31:46
+	 * @return 20151001
+	 */
+	public static int getLatst3MonthStartDate(){
+		DateFormat df = new SimpleDateFormat("yyyyMMdd");
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.MONTH,calendar.get(Calendar.MONTH)-3);
+		calendar.set(Calendar.DAY_OF_MONTH,1);
+//		System.out.println(df.format(calendar.getTime()).toString());
+		
+		
+		return Integer.parseInt(df.format(calendar.getTime()).toString());
+	}
+	
+	/**获取上个月月末日子
+	 * add by lzc     date: 2016年1月26日
+	 * ex:
+	 * now:2016年1月26日11:33:14
+	 * @return 20151231
+	 */
+	public static int getLastMonthEndDate(){
+		DateFormat df = new SimpleDateFormat("yyyyMMdd");
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.MONTH,calendar.get(Calendar.MONTH)-1);
+		calendar.set(Calendar.DAY_OF_MONTH,calendar.getActualMaximum(Calendar.DATE));
+//		System.out.println(calendar.get(Calendar.MONTH));
+//		System.out.println(df.format(calendar.getTime()).toString());
+		return Integer.parseInt(df.format(calendar.getTime()).toString());
+		
+	}
+	
+	/**获取年份第一天
+	 * add by lzc     date: 2016年1月29日
+	 * @param year
+	 * @return
+	 */
+	public static int getYearBeginDate(int year){
+		DateFormat df = new SimpleDateFormat("yyyyMMdd");
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.YEAR, year);
+		calendar.set(Calendar.MONTH,0);
+		calendar.set(Calendar.DAY_OF_MONTH,1);
+//		System.out.println(calendar.get(Calendar.MONTH));
+		System.out.println(df.format(calendar.getTime()).toString());
+		return Integer.parseInt(df.format(calendar.getTime()).toString());
 	}
 	
 	

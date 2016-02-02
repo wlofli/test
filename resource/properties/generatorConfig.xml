@@ -6,7 +6,7 @@
 <generatorConfiguration>
 	<properties resource="properties/generatorConfig.properties"/>
 	<classPathEntry location="${classPath}" />
-	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
+	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="flat">
 		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
 		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
 			<property name="fileName" value="GeneratedMapperConfig.xml" />
@@ -16,8 +16,10 @@
 		
 		
 		<commentGenerator>
+			   <!-- 是否去除自动生成的注释 true：是 ： false:否 -->  
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
+		<!--数据库链接URL，用户名、密码 -->  
 		<jdbcConnection driverClass="${driverClass}"
 			connectionURL="${connectionURL}" userId="${userId}" password="${password}">
 		</jdbcConnection>
@@ -25,31 +27,36 @@
 			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
+ 		<!-- 生成模型的包名和位置-->  
 		<javaModelGenerator targetPackage="${modelPackage}"
 			targetProject="${targetProject}">
 			<property name="enableSubPackages" value="true" />
 		</javaModelGenerator>
 
+	    <!-- 生成映射文件的包名和位置-->  
 		<sqlMapGenerator targetPackage="${sqlMapperPackage}"
 			targetProject="${targetProject}">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
-
+		<!-- 生成DAO的包名和位置-->  
 		<javaClientGenerator type="XMLMAPPER"
 			targetPackage="${daoMapperPackage}" targetProject="${targetProject}">
 <!-- 			以下为是否产生子目录 -->
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
+		 <!-- 要生成哪些表-->  
 <!-- 		<table schema="minghan" tableName="sys_group" domainObjectName="Group"> -->
 <!-- 			<generatedKey column="groupId" sqlStatement="mysql" -->
 <!-- 				identity="true" /> -->
 <!-- 		</table> -->
-		<table schema="moke" tableName="m_consumption_info" domainObjectName="Consumption"
+		<table  tableName="%" 
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false">
 <!-- 			强制将字段转换为你需要的javatype类型 -->
-			<columnOverride column="deleted" javaType="String" ></columnOverride>
+			<generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+<!-- 			<columnOverride column="id" javaType="String" > -->
+<!-- 			</columnOverride> -->
 		</table>
 	
 	</context>
