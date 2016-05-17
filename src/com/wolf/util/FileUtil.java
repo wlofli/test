@@ -374,7 +374,14 @@ public class FileUtil {
 	
 
 	public static void main(String arg[]) {
-		System.out.println(StringUtil.getRootPath());
+//		System.out.println(StringUtil.getRootPath());
+		String content = "jdbc.url=jdbc:mysql://192.168.0.252:3306/fkdb?characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false\n" +
+				"jdbc.username=root\njdbc.max.conn=200\njdbc.min.conn=10\n"+
+				"jdbc.password=123456\njdbc.driverClassName=org.gjt.mm.mysql.Driver\n";
+		
+		String fileString = "d:jdbc.txt";
+//		File file = new File(fileString);
+		FileUtil.write(fileString, content);
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.wolf.util;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -95,15 +96,28 @@ public class DateUtil {
 	}
 	
 	
-	public static void main(String[] args) {
-		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	public static Date getDate(String date, String format){
 		
-		System.out.println(sf.format(new Date()));
+		try {
+			return new SimpleDateFormat(format).parse(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+//			log.error("获取某格式的时间异常", e);
+		}
+		return null;
+	}
+	
+	public static void main(String[] args) {
+//		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//		System.out.println(DateUtil.getDate("", format));
+//		System.out.println(sf.format(new Date()));
 //		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
-		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
+//		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(1)));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(2)));
 //		System.out.println(sf.format(DateUtil.getMinMonthTime(3)));
+		Date date = new Date();
+		System.out.println(date.getTime()/1000);
 		
 	}
 

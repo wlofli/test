@@ -2,6 +2,7 @@ package base.wolf.struct;
 /**
  * author lzc2015年7月23日下午4:03:51
  */
+
 public class Page {
 	
 //	private int totalPage;//总页数

@@ -1,5 +1,6 @@
 package base.wolf.test;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.URLDecoder;
@@ -25,6 +26,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.mybatis.generator.config.JDBCConnectionConfiguration;
 import org.mybatis.generator.internal.db.ConnectionFactory;
+import org.springframework.data.redis.connection.Message;
 
 import com.wolf.util.FileUtil;
 import com.wolf.util.MD5Util;
@@ -40,8 +42,26 @@ import wolf.tools.WebApplication.UrlConnectionUtil;
  */
 public class Test {
 
+	public String getPath(){
+		String result = this.getClass().getResource("").toString();
+		System.out.println(result);
+		int s = result.indexOf("classes");
+		System.out.println(s);
+		result = result.subSequence(5, s).toString();
+//		result = result.substring(s);
+		System.out.println(result);
+		return result;
+	}
 	
 	public static void main(String[] args) throws Exception {
+
+		String s = "jdbc:mysql://192.168.0.246:3306/mdb?characterEncoding=utf-8";
+		String tString = s.split("mdb")[0];
+		System.out.println(tString);
+		
+//		FileUtil.write(test.getPath()+"txt.txt", "111");
+		
+		
 //		InetAddress address = InetAddress.getLocalHost();
 //		System.out.println(InetAddress.getLocalHost());
 
@@ -127,16 +147,16 @@ public class Test {
 //		System.out.println(a);
 		
 		
-		int b = 0;
-		int a = 1;
-		try {
-		 int c = a/b;
-		 System.out.println("c==" + c);
-		} catch (Exception e) {
-			// TODO: handle exception
-			throw e;
-		}
-		
+//		int b = 0;
+//		int a = 1;
+//		try {
+//		 int c = a/b;
+//		 System.out.println("c==" + c);
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			throw e;
+//		}
+//		
 		
 		
 		

@@ -16,7 +16,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class MysqlJDbc implements InvocationHandler{
 	
 	public static final String RESOURCE = "resource/conf/spring-mybatis.xml";
-
+	
 	public Object invoke(Object proxy, Method method, Object[] args)
 			throws Throwable {
 		// TODO Auto-generated method stub
