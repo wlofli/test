@@ -13,6 +13,21 @@ public class StringUtil {
 	}
 	
 	
+	/**
+	 * 首字母大写
+	 * add by lzc 2016年5月18日
+	 * @param s
+	 * @return
+	 */
+	public static String UpperCaseFirstLetter(String s) throws Exception{
+		if(s == null || s.equals("")){
+			throw new Exception("字符串为空");
+		}
+		Character a = s.charAt(0);
+		String reString = Character.toString(Character.toUpperCase(a)) + s.substring(1, s.length());
+		return reString;
+	}
+	
 	
 	public static String string2Unicode(String s) {
 	    try {

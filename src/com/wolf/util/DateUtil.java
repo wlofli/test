@@ -96,6 +96,20 @@ public class DateUtil {
 	}
 	
 	
+	/**获取当天0点0s时时间
+	 * 
+	 * add by lzc 2016年6月4日
+	 * @return
+	 */
+	public static Date getTodayBeginDay(){
+		Calendar calendar = Calendar.getInstance();
+		calendar.set(Calendar.HOUR_OF_DAY,0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+		return calendar.getTime();
+	}
+	
 	public static Date getDate(String date, String format){
 		
 		try {
@@ -108,16 +122,11 @@ public class DateUtil {
 	}
 	
 	public static void main(String[] args) {
-//		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 //		System.out.println(DateUtil.getDate("", format));
 //		System.out.println(sf.format(new Date()));
-//		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
-//		System.out.println(sf.format(DateUtil.getNextDay(new Date())));
-//		System.out.println(sf.format(DateUtil.getMinMonthTime(1)));
-//		System.out.println(sf.format(DateUtil.getMinMonthTime(2)));
-//		System.out.println(sf.format(DateUtil.getMinMonthTime(3)));
-		Date date = new Date();
-		System.out.println(date.getTime()/1000);
+		Date date = getTodayBeginDay();
+		System.out.println(date.getTime());
 		
 	}
 

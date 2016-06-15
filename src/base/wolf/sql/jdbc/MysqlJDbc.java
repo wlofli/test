@@ -3,11 +3,15 @@ package base.wolf.sql.jdbc;
 import java.io.Reader;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.sql.DriverManager;
+import java.util.Properties;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.jdbc.ScriptRunner;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
 
 /**
  * author lzc
@@ -25,6 +29,18 @@ public class MysqlJDbc implements InvocationHandler{
 		SqlSession session = null;
 		try {
 			reader = Resources.getResourceAsReader(RESOURCE);
+			Properties props =Resources.getResourceAsProperties("conf/jdbc.properties");
+
+			String url = props.getProperty("jdbc.url").split("mdb")[0];
+//			String url = url + dbname;
+			
+		    String driver = props.getProperty("jdbc.driverClassName");
+		    String username = props.getProperty("jdbc.username");
+		    String password = props.getProperty("jdbc.password");
+		    Class.forName(driver).newInstance();
+//		    Connection conn = (Connection) DriverManager.getConnection(url, username, password);
+		    
+			ScriptRunner runner = new ScriptRunner(conn, false, false);
 //			SqlSessionFactoryBuilder sfBuilder  undone
 		} catch (Exception e) {
 			// TODO: handle exception

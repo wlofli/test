@@ -8,8 +8,10 @@ import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -42,22 +44,32 @@ import wolf.tools.WebApplication.UrlConnectionUtil;
  */
 public class Test {
 
-	public String getPath(){
-		String result = this.getClass().getResource("").toString();
+	public static String getPath(){
+		String result = Test.class.getResource("/").toString();
 		System.out.println(result);
 		int s = result.indexOf("classes");
-		System.out.println(s);
 		result = result.subSequence(5, s).toString();
 //		result = result.substring(s);
-		System.out.println(result);
 		return result;
 	}
 	
 	public static void main(String[] args) throws Exception {
-
-		String s = "jdbc:mysql://192.168.0.246:3306/mdb?characterEncoding=utf-8";
-		String tString = s.split("mdb")[0];
-		System.out.println(tString);
+		System.out.println(getPath());
+		
+		Map maps = new HashMap();
+		Iterator it =maps.keySet().iterator();
+		while (it.hasNext()) {
+			String key = (String) it.next();
+			if (maps.get(key) instanceof String) {
+				
+			}else {
+				
+			}
+			Double value = (Double) maps.get(key);
+			
+		}
+//		maps.entrySet();
+//		System.out.println(tString);
 		
 //		FileUtil.write(test.getPath()+"txt.txt", "111");
 		
@@ -75,16 +87,12 @@ public class Test {
 //		System.out.println(System.currentTimeMillis());
 		
 		
-//		HashMap<String, String>map = new HashMap<String, String>();
-//		map.put("id", "id");
-//		System.out.println(map.get("name"));
-//		String string = "%3CCOUNTRY%3E/%3CLANG%3E";
 		
 		
-		//number
-//		 NumberFormat nf = new DecimalFormat("######0.00");
-//		System.out.println(nf.format(Double.parseDouble("6")));
-//		System.out.println();
+//		number
+		 NumberFormat nf = new DecimalFormat("######0.00");
+		System.out.println(nf.format(Double.parseDouble("6")));
+		System.out.println();
 		
 		
 //		//out of memory
@@ -111,11 +119,6 @@ public class Test {
 //		}
 		
 		
-//		String tString = "&18768104912&123456";
-//		System.out.println(tString.split("&").length);
-//		http://www.91loan.cn/moke/site/send/code?check=false
-//		data,	phone 
-//		type:json
 		
 		
 		
@@ -145,18 +148,6 @@ public class Test {
 //		
 //		double a = Double.parseDouble(df.format(6.021565456));
 //		System.out.println(a);
-		
-		
-//		int b = 0;
-//		int a = 1;
-//		try {
-//		 int c = a/b;
-//		 System.out.println("c==" + c);
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//			throw e;
-//		}
-//		
 		
 		
 		
