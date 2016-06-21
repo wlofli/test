@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ydx.util.ibatis.CommonMapper" >
+	<resultMap type="com.ydx.util.ibatis.Tables" id="result">
+		<result property="Field" column="Field" javaType="String"/>
+		<result property="Type" column="Type"/>
+		<result property="Null" column="Null"/>
+		<result property="Key" column="Key"/>
+		<result property="Default" column="Default"/>
+		<result property="Extra" column="Extra"/>
+	</resultMap>
+	
+	<select id="exexSql" resultMap="result" >
+		SHOW COLUMNS FROM ${sql}
+	</select>
+
+ </mapper>

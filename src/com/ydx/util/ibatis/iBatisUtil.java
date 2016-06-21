@@ -2,6 +2,7 @@ package com.ydx.util.ibatis;
 
 import java.util.List;
 
+import com.spring.config.SpringConfig;
 import com.wolf.util.FileUtil;
 import com.wolf.util.StringUtil;
 
@@ -142,16 +143,21 @@ public class iBatisUtil {
 
 
 	public static void main(String[] args) {
-		String param = "goods_return_id,consignee,phone,tel,province_code,city_code,area_code,street_code,street_code,update_time,isdefault";
-		
+//		String param = "goods_return_id,consignee,phone,tel,province_code,city_code,area_code,street_code,street_code,update_time,isdefault";
+		StringBuffer sb = new StringBuffer();
 		String tbname = null;
 		String filePath = null;
 		String fileName = null;
+		SpringConfig.start();
 		
 		tbname = "tb_goods_return_info";
 		fileName = "goods_return.xml";
-		
-		iBatisUtil.generateIbatisXml(param, filePath, fileName, tbname, true, true, true);
-		
+		CommonService commonService = (CommonService) SpringConfig.applicationContext.getBean("commonService");
+		List<Tables> list =  commonService.getTables(tbname);
+		for (Tables tables : list) {
+//			System.out.println(tables.getField());
+			sb.append(tables.getField() + ",");
+		}
+		iBatisUtil.generateIbatisXml(sb.toString(), filePath, fileName, tbname, true, true, true);
 	}
 }
