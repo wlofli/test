@@ -150,8 +150,8 @@ public class iBatisUtil {
 		String fileName = null;
 		SpringConfig.start();
 		
-		tbname = "tb_goods_return_info";
-		fileName = "goods_return.xml";
+		tbname = "tb_cash_coupon";
+		fileName = "cash_coupon.xml";
 		CommonService commonService = (CommonService) SpringConfig.applicationContext.getBean("commonService");
 		List<Tables> list =  commonService.getTables(tbname);
 		for (Tables tables : list) {

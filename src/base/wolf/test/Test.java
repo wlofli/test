@@ -1,42 +1,11 @@
 package base.wolf.test;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
-import java.util.UUID;
 
-import javax.mail.internet.InternetAddress;
-import javax.xml.ws.http.HTTPException;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
-import org.apache.commons.lang.math.RandomUtils;
-import org.apache.ibatis.jdbc.SqlRunner;
-import org.apache.tomcat.jni.User;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONTokener;
-import org.mybatis.generator.config.JDBCConnectionConfiguration;
-import org.mybatis.generator.internal.db.ConnectionFactory;
-import org.springframework.data.redis.connection.Message;
-
-import com.wolf.util.FileUtil;
-import com.wolf.util.MD5Util;
-import com.wolf.util.StringUtil;
-
-import base.wolf.model.BaseModel;
-import base.wolf.struct.Tree;
-import wolf.tools.WebApplication.UrlConnectionUtil;
 
 
 /**
@@ -54,20 +23,29 @@ public class Test {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		System.out.println(getPath());
+//		System.out.println(getPath());
+		JSONObject object = new JSONObject();
+		JSONObject object1 = new JSONObject();
 		
-		Map maps = new HashMap();
-		Iterator it =maps.keySet().iterator();
-		while (it.hasNext()) {
-			String key = (String) it.next();
-			if (maps.get(key) instanceof String) {
-				
-			}else {
-				
-			}
-			Double value = (Double) maps.get(key);
-			
+		JSONArray array = new JSONArray();
+		String text = "[{\"goods_id\":\"2\",\"history_type\":2,\"img\":\"group1/M00/00/06/wKgA_VddNnuAAESbAAAnRa4ZNJ0053.jpg\",\"isHistoryAllowEdit\":false,\"isHistorySelect\":false,\"main_sku_id\":\"1\",\"market_price\":300.0,\"qty\":2,\"rate\":0.0,\"sell_price\":200.0,\"shop_car_qty\":1,\"short_name\":\"天天酷跑\",\"sku_id\":\"2\",\"title\":\"杀杀杀\"},{\"goods_id\":\"2\",\"history_type\":2,\"img\":\"group1/M00/00/06/wKgA_VddNnuAAESbAAAnRa4ZNJ0053.jpg\",\"isHistoryAllowEdit\":false,\"isHistorySelect\":false,\"main_sku_id\":\"2\",\"market_price\":34.0,\"qty\":35,\"rate\":0.0,\"sell_price\":13.0,\"shop_car_qty\":1,\"short_name\":\"56\",\"sku_id\":\"42\",\"title\":\"杀杀杀\"},{\"goods_id\":\"4\",\"history_type\":2,\"img\":\"group1/M00/00/06/wKgA_VddNnuAAESbAAAnRa4ZNJ0053.jpg\",\"isHistoryAllowEdit\":false,\"isHistorySelect\":false,\"main_sku_id\":\"1\",\"market_price\":400.0,\"qty\":10,\"rate\":0.0,\"sell_price\":200.0,\"shop_car_qty\":1,\"short_name\":\"够丝滑巧克力\",\"sku_id\":\"124\",\"title\":\"巧克力\"}]";
+		object.put("goods_id", "2");
+		object.put("history_type", "2");
+		object1.put("goods_id", "3");
+		object1.put("history_type", "3");
+		array.add(object);
+		array.add(object1);
+		
+		
+		System.out.println(array.toString());
+		List<Map> list = array.parseArray(array.toString(), Map.class);
+		for (Map map : list) {
+			Map<String, String> map2 = map;
+			System.out.println(map2.toString());
 		}
+//		JSONObject.parseObject("", Map.class);
+		
+		
 //		maps.entrySet();
 //		System.out.println(tString);
 		
@@ -90,9 +68,9 @@ public class Test {
 		
 		
 //		number
-		 NumberFormat nf = new DecimalFormat("######0.00");
-		System.out.println(nf.format(Double.parseDouble("6")));
-		System.out.println();
+//		 NumberFormat nf = new DecimalFormat("######0.00");
+//		System.out.println(nf.format(Double.parseDouble("6")));
+//		System.out.println();
 		
 		
 //		//out of memory

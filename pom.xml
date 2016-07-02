@@ -142,6 +142,19 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<version>4.0.2.RELEASE</version>
 	</dependency>
   	
+  	<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+	    <version>1.2.13</version>
+	</dependency>
+  	
+  	<!-- https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->
+	<dependency>
+	    <groupId>com.thoughtworks.xstream</groupId>
+	    <artifactId>xstream</artifactId>
+	    <version>1.4.9</version>
+	</dependency>
   	
   </dependencies>
 </project>
